@@ -1,6 +1,0 @@
-2023-03-28 11:35:31.477 [info] update#ctor - updates are disabled as there is no update URL
-2023-03-28 11:35:34.402 [info] Starting extension host with pid 2758 (fork() took 19 ms).
-2023-03-28 11:37:28.796 [info] Extension host with pid 2758 exited with code: 0, signal: null.
-2023-03-28 11:37:31.315 [info] Starting extension host with pid 2896 (fork() took 24 ms).
-2023-03-28 14:15:02.638 [warning] Sending IPC message to channel 'vscode:electron-main->shared-process=exit' for shared process that is destroyed
-2023-03-28 14:15:02.642 [info] Waiting for extension host with pid 2896 to exit.

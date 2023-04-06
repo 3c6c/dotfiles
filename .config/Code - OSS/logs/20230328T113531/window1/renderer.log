@@ -1,5 +1,0 @@
-2023-03-28 11:35:34.667 [info] Started initializing default profile extensions in extensions installation folder. file:///home/goku/.vscode-oss/extensions
-2023-03-28 11:35:35.233 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/goku/.vscode-oss/extensions
-2023-03-28 11:35:38.653 [info] [perf] Render performance baseline is 104ms
-2023-03-28 11:37:35.674 [info] [perf] Render performance baseline is 176ms
-2023-03-28 12:01:02.457 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
