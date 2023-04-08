@@ -1,6 +1,7 @@
 #
 # ~/.bashrc
 #
+export PATH=~/.local/bin/:$PATH
 
 neofetch
 # If not running interactively, don't do anything
