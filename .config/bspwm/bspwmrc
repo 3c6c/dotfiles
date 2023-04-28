@@ -4,7 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-$HOME/.config/polybar/launch.sh &
+#$HOME/.config/polybar/launch.sh &
 
 bspc config border_width         6
 bspc config exclude class "virt-manager, Virt-manager"
