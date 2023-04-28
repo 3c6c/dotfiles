@@ -9,6 +9,7 @@
 
 import XMonad
 import Data.Monoid
+import System.IO
 import System.Exit
 
 import qualified XMonad.StackSet as W
@@ -68,6 +69,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- close focused window
     , ((modm .|. shiftMask, xK_q     ), kill)
 
+    -- close a windows
+    -- , ((modm,		    xK_q     ), close)
+
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
 
@@ -120,10 +124,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
-    , ((modm .|. shiftMask, xK_E     ), io (exitWith ExitSuccess))
+    , ((modm .|. shiftMask, xK_o     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
-    , ((modm              , xK_q     ), spawn "~/.local/bin/xmonad --recompile; ~/.local/bin/xmonad --restart")
+    , ((modm .|. shiftMask, xK_r     ), spawn "~/.local/bin/xmonad --recompile; ~/.local/bin/xmonad --restart")
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
@@ -150,6 +154,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 ------------------------------------------------------------------------
 -- Mouse bindings: default actions bound to mouse events
+
 --
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
