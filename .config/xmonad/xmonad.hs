@@ -11,6 +11,9 @@ import Data.Monoid
 -- Utilities
 import XMonad.Util.EZConfig
 
+-- Hooks
+import XMonad.Hooks.ManageDocks
+
 -- System
 import System.IO
 import System.Exit
@@ -65,6 +68,8 @@ myLayout = tiled ||| Mirror tiled ||| Full
 
 myManageHook = composeAll
     [ className =? "Picture-in-Picture" --> doFloat
+    , className =? "firefox"         --> doShift "1"
+    , className =? "spotify"        --> doShift "6"
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
