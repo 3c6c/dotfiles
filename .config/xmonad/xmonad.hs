@@ -44,8 +44,9 @@ myModMask       = mod4Mask
 
 myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myNormalBorderColor  = "#99918A"
+--myFocusedBorderColor = "#ff0000"
+myFocusedBorderColor = "#8be9fd"
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-button1, Set the window to floating mode and move by dragging
@@ -102,6 +103,7 @@ main = xmonad $ def
   `additionalKeysP`
     [ ("M-<Return>", spawn "alacritty"),
       ("M-d", spawn "dmenu_run"),
+      ("M-S-z", spawn "flameshot gui"),
       ("M-S-q", kill),
       ("M-S-<Down>", spawn "brightnessctl set 355-"),
       ("M-S-<Up>", spawn "brightnessctl set 355+"),
