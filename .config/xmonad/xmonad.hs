@@ -14,6 +14,10 @@ import XMonad.Util.EZConfig
 -- Hooks
 import XMonad.Hooks.ManageDocks
 
+-- Layout
+import XMonad.Layout.Magnifier
+import XMonad.Layout.ThreeColumns
+
 -- System
 import System.IO
 import System.Exit
@@ -55,15 +59,12 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol
   where
-     -- default tiling algorithm partitions the screen into two panes
+     threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
      tiled   = Tall nmaster delta ratio
-     -- The default number of windows in the master pane
      nmaster = 1
-     -- Default proportion of screen occupied by master pane
      ratio   = 1/2
-     -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
 myManageHook = composeAll
