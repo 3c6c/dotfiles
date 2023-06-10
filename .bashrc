@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 export PATH="/home/goku/.local/bin/:$PATH"
-neofetch
+#neofetch
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
