@@ -7,16 +7,27 @@ export PATH="/home/goku/.local/bin/:$PATH"
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+alias la="ls -la --color=auto"
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+# User Alias Start
 alias bluec="bluetoothctl connect FD:98:82:65:39:91"
 alias blued="bluetoothctl disconnect"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
-alias opencodedir=". ~/.config/sys-scripts/open-code-dir.sh && clear"
-alias pyenv='source ~/Documents/codeplayground/Django-learning/pyvenv/bin/activate'
+alias opendir=". ~/.config/sys-scripts/opendir.sh"
+alias pyenv='source ~/Documents/codeplayground/Django/projects/Shopping-Website-Django/pyenv/bin/activate'
 alias anon-term='''echo "current I.P: $(curl ifconfig.me;printf '\n')" && sudo systemctl start tor && . torsocks on && echo "Tor IP: $(curl ifconfig.me;printf '\n')"'''
 alias ovpnthm='sudo openvpn ~/GokuBlack69.ovpn'
+alias nikto="perl /opt/git/nikto/program/nikto.pl"
+alias fclear="python3 /opt/git/cli-fun/fclear.py"
+alias nm-r="sudo systemctl restart Network-Manager"
+alias sys-s-p="sudo systemctl start postgresql"
+
+## Docker
+alias c-dfile="touch Dockerfile"
+
+# User Alias End
 
 #ffplay -nodisp -autoexit /opt/project-x/project_x_sounds/Welcome-sir.mp3
 
@@ -25,7 +36,4 @@ alias ovpnthm='sudo openvpn ~/GokuBlack69.ovpn'
 #/usr/bin/pipewire-media-session &
 
 colorscript random
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+HISTSIZE=20000

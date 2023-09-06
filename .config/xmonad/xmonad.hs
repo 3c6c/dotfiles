@@ -55,7 +55,7 @@ myFocusFollowsMouse = True
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
 
-myBorderWidth   = 1
+myBorderWidth   = 2
 
 myModMask       = mod4Mask
 
@@ -155,6 +155,7 @@ main = xmonad $ xmobarProp $ def
     [ ("M-<Return>", spawn "alacritty"),
       ("M-d" ,sequence_ [spawn "dmenu_run" , spawn (mySoundPlayer ++ dmenuSound)]),
       ("M-S-z", spawn "flameshot gui"),
+      ("Print", spawn "flameshot gui"),
       ("M-S-q",sequence_ [kill , spawn (mySoundPlayer ++ sagSound)]),
       ("M-S-<Down>", spawn "brightnessctl set 355-"),
       ("M-S-<Up>", spawn "brightnessctl set 355+"),
@@ -167,7 +168,8 @@ main = xmonad $ xmobarProp $ def
       ("M-m", windows W.focusMaster),
       ("M-S-o",sequence_ [spawn (mySoundPlayer ++ shutdownSound), io (exitWith ExitSuccess)]),
       ("M-S-f", spawn "firefox"),
-
+      ("M-S-n", spawn "nemo"),
+      ("M-S-b", spawn "obsidian"),
       -- Scrathpads
       ("M-C-<Return>", namedScratchpadAction myScratchPads "terminal")
     ]
