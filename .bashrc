@@ -12,11 +12,11 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # User Alias Start
-alias bluec="bluetoothctl connect FD:98:82:65:39:91"
+alias bluec="bluetoothctl connect 74:D7:13:7E:53:00"
 alias blued="bluetoothctl disconnect"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
 alias opendir=". ~/.config/sys-scripts/opendir.sh"
-alias pyenv='source ~/Documents/codeplayground/Django/projects/Shopping-Website-Django/pyenv/bin/activate'
+alias pyenv='source ~/Documents/codeplayground/Django/projects/BlogWebsite/pyenv/bin/activate'
 alias anon-term='''echo "current I.P: $(curl ifconfig.me;printf '\n')" && sudo systemctl start tor && . torsocks on && echo "Tor IP: $(curl ifconfig.me;printf '\n')"'''
 alias ovpnthm='sudo openvpn ~/GokuBlack69.ovpn'
 alias nikto="perl /opt/git/nikto/program/nikto.pl"
