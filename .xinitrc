@@ -42,7 +42,7 @@ fi
 #xmobar &
 
 # Copy tmp files for cracked burpsuite
-cp -r /opt/git/Burp-Suite/burp_temp/burp* /tmp/
+# cp -r /opt/git/Burp-Suite/burp_temp/burp* /tmp/
 
 # Script to greet on login (annoying af)
 #bash /opt/project-x/scripts/main.sh
@@ -56,6 +56,6 @@ nitrogen --restore &
 xsetroot -cursor_name left_ptr
 
 # Starting xmonad (build from source version)
-exec xmonad
+exec dwm
 
 #exec startxfce4

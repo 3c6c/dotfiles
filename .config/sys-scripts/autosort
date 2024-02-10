@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# This script is supposed to autosort files based on their extension in specific folder for example 
+# 1. .docx in ~/Documents/docx/
+# 2. .pdf in ~/Documents/pdfs/
+# 3. .appimage in /opt/appimages/
