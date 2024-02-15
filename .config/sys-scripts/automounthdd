@@ -1,0 +1,26 @@
+#!/bin/bash
+DIR="/mnt/hdd"
+scriptname="$(basename $0)"
+while getopts 'p:h' OPTION; do
+  case "$OPTION" in
+    p)
+      args="$OPTARG"
+      printf "Checking $args path for mountpoint\n" && mountpoint '$args' && printf "$args is mounted\n" || printf "$args is not mounted\n";;
+    *)
+      printf "Usage: $scriptname [-d] to look in default location\n $scriptname [-p] <path> to check a specific folder\n"
+  esac
+done
+
+printf "No flags were given running with default values, checking for $DIR\n" && mountpoint $DIR && printf "Directory is mounted\n" && exit 0 || printf "Directory is not mounted\n" && printf "Do you want to mount it? (y/n)\n" && read -e mntornot
+
+if [[ ! -z $mntornot ]]; then
+  if [[ $mntornot == "y" ]]; then
+    printf "mounting $DIR\n"
+    sudo mount /dev/sdb1 /mnt/hdd && printf "$DIR mounted successfully\n"
+  elif [[ $mntornot == "n" ]]; then
+    printf "Okay exiting\n"
+  fi
+else
+  printf "Bad Choice $mntornot\n"
+fi
+
