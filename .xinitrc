@@ -35,27 +35,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # Compositor for background opacity (pkg: picom)
-# picom --config .config/picom.conf &
-
-# Status bar (pkg: polybar)
-#polybar &
-#xmobar &
+#picom --config .config/picom.conf &
 
 # Copy tmp files for cracked burpsuite
 # cp -r /opt/git/Burp-Suite/burp_temp/burp* /tmp/
 
-# Script to greet on login (annoying af)
-#bash /opt/project-x/scripts/main.sh
-
 # Wallpaper manager (pkg: nitrogen)
 nitrogen --restore &
 
-#exec bspwm
-
 # Setting mouse cursor instead of an X on screen
 xsetroot -cursor_name left_ptr
-
-# Starting xmonad (build from source version)
-exec dwm
-
-#exec startxfce4
+exec dbus-launch --sh-syntax --exit-with-session dwm
+#while type dwm >/dev/null ; do dwm && continue || break ; done

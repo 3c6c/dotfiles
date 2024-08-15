@@ -21,4 +21,7 @@ fi
 # User alias start
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
 alias sys-s-p="sudo systemctl start postgresql"
+alias vim='nvim'
+
+HISTSIZE=20000
 
