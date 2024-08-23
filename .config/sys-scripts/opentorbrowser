@@ -1,0 +1,5 @@
+#/bin/sh
+
+# Add feature that detects if tor browser directory exists or not in the specified folder first if not then it gives respective output.
+cd /opt/tor-browser/
+/opt/tor-browser/start-tor-browser.desktop

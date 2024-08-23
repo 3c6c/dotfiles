@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source /opt/tools/venvs/pywal_env/bin/activate
+wal -i $1 > /dev/null
+printf "[+] Generated Color config successfully\n"
+deactivate

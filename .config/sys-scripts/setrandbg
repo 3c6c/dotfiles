@@ -1,0 +1,20 @@
+#!/bin/bash
+
+wal_path=$HOME/.cache/wal
+saved_path=/etc/portage/savedconfig
+
+printf "[+] Using random wallpaper from wallpaper directory to generate color scheme\n"
+wall=$(find $HOME/Pictures/wallpapers/main -type f | shuf -n 1)
+
+printf "[+] Setting up wallpaper\n"
+#nitrogen --set-centered $wall
+wal $wall > /dev/null
+
+sed -i 'N;$!P;D' $wal_path/colors-wal-dwm.h
+
+sudo mv $wal_path/colors-wal-dwm.h $saved_path/x11-wm/
+sudo mv $wal_path/colors-wal-st.h $saved_path/x11-terms/
+
+printf "[+] Emerging dwm and st\n"
+sudo emerge -qv x11-wm/dwm
+sudo emerge -qv x11-terms/st
